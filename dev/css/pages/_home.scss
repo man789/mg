@@ -34,46 +34,36 @@
 
 // Cars Section
 .cars{
-  display: grid;
-  grid-template-areas: 
-  "car1 car2"
-  "car3 car4"
-  "car5 car6"
-  ;
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   padding: 0 4rem;
   &__card:nth-of-type(1){
-    grid-area: car1;
     .cars__card__img{
       background: url('../img/mgzs.png') center/cover;
     }
   }
   &__card:nth-of-type(2){
-    grid-area: car2;
     .cars__card__img{
       background: url('../img/mgzs.png') center/cover;
     }
   }
   &__card:nth-of-type(3){
-    grid-area: car3;
     .cars__card__img{
       background: url('../img/mgzs.png') center/cover;
     }
   }
   &__card:nth-of-type(4){
-    grid-area: car4;
     .cars__card__img{
       background: url('../img/mgmarvelr.png') center/cover;
     }
   }
   &__card:nth-of-type(5){
-    grid-area: car5;
     .cars__card__img{
       background: url('../img/mg5.png') center/cover;
     }
   }
   &__card:nth-of-type(6){
-    grid-area: car6;
     .cars__card__img{
       background: url('../img/mg4.png') center/cover;
     }
@@ -82,9 +72,21 @@
     display: flex;
     flex-direction: column;
     background-color: $bg-grey;
-    width: 100%;
     padding: 1.5rem;
     position: relative;
+    transition: all .5s ease-in-out;
+    flex: 1 1 40%;
+    // if last child is odd
+    &:nth-last-child(1):nth-child(odd) {
+      flex: 0 0 calc(50% - calc(1.5rem / 2));
+    }
+    &:nth-last-child(1):nth-child(odd):hover {
+      flex-grow: 0.085;
+    }
+    // base grow for card
+    &:hover{
+      flex-grow: 3;
+    }
     &__img{
       height: 300px;
     }
@@ -114,6 +116,7 @@
       bottom: calc(1.5rem - 0.625rem);
       right: 1.5rem;
       display: flex;
+      transition: 1s all ease-in-out;
       a:nth-of-type(1){
         font-size: 0.875rem;
         color: $black;
@@ -135,21 +138,17 @@
         background-color: $black;
         border-radius: 25px;
         &:hover{
-          border: 1px solid $white;
           background-color: $white;
           color: $black;
         }
       }
       a{
         opacity: 0;
-        display: none;
-        transition: .1s all ease-in-out;
+        transition: .5s all ease-in-out;
       }
     }
     &:hover a{
       opacity: 1;
-      display: block;
-      transition: .1s all ease-in-out;
     }
   }
 }
