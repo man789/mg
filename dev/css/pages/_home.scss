@@ -496,10 +496,28 @@
 .blog{
   padding: 4% 0 4% 10%;
   width: 100%;
+  &__title{
+    h2{
+      font-size: 2.5rem;
+      color: $black;
+      font-weight: 100;
+      margin-bottom: 3rem;
+      span:first-child{
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.375rem;
+        color: $text-grey;
+        display: block;
+      }
+      span:last-child{
+        font-weight: 300;
+      }
+    }
+  }
   .container{
     margin: 0 auto;
     height: 100%;
-    padding: 0 4em;
+    padding: 0 4em 0 0;
     overflow: hidden;
   }
   .slider-wrap {
@@ -513,6 +531,25 @@
   }
   .swiper-slide {
     text-align: center;
+    >div:nth-of-type(1){
+      width: 80%;
+    }
+    h3{
+      font-size: 0.875rem;
+      color: $text-grey;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    p:first-of-type{
+      font-size: 1.563rem;
+      font-weight: 300;
+    }
+    p:last-of-type{
+      font-size: 1.563rem;
+      font-weight: 100;
+    }
   }
   .swiper-container {
     overflow: visible;
@@ -520,4 +557,364 @@
   .swiper-slide-next + .swiper-slide + .swiper-slide{
     opacity: .25;
   }
+}
+.arrow-scroll{
+  position: relative;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+}
+.scrollSwiper{
+  position: relative;
+  width: 80%;
+  margin-right: 4rem;
+  .swiper-scrollbar-horizontal {
+    border-radius: 2px;
+    height: 5px;
+    width: 100%;
+
+  }
+}
+.arrowSwiper{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 10%;
+  justify-content: space-evenly;
+  .swiper-button-prev{
+    position: relative;
+    // top: 50%;
+    width: 2rem;
+    height: 2rem;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $black;
+    border: 1px solid $black;
+    border-radius: 50%;
+    &::after{
+      content: '';
+    }
+  }
+  .swiper-button-next{
+    position: relative;
+    // top: 50%;
+    width: 2rem;
+    height: 2rem;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $black;
+    // right: 0;
+    border: 1px solid $black;
+    border-radius: 50%;
+    &::after{
+      content: '';
+    }
+  }
+}
+// Section Slider Image
+.slider{
+  border: 5px solid $white;
+  height: 800px;
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-pagination{
+    // left: 80% !important;
+    transform: none !important;
+    left: unset !important;
+    right: 3% !important;
+  }
+  /* target the active bullet */
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: $white !important;
+  opacity: 1;
+}
+
+/* target all bullets */
+.swiper-pagination-bullet {
+  background-color: $bg-grey !important;
+  opacity: 1;
+}
+}
+// Section Newsletter
+.newsletter{
+  background-color: $bg-grey;
+  padding: 4rem 0;
+  .wrapper{
+    display: flex;
+    align-items: center;
+    div:nth-of-type(1){
+      margin-right: auto;
+    }
+    p{
+      font-weight: 100;
+      font-size: 1.563em;
+      line-height: 2rem;
+    }
+    span{
+      font-weight: 300;
+    }
+    a{
+      color: $white;
+      background-color: $black;
+      font-size: 1rem;
+      width: fit-content;
+      border: 1px solid $black;
+      border-radius: 25px;
+      padding: 10px 15px;
+      transition: .3s all ease-in-out;
+      &:hover{
+        background-color: transparent;
+        color: $black;
+      }
+    }
+  }
+}
+// Section Google Map
+.g-map{
+  border: 5px solid $white;
+  position: relative;
+  form{
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 25px;
+    width: fit-content;
+    input{
+      border: none;
+      background-color: $white;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 25px 0 0 25px;
+    }
+    button{
+      border: none;
+      padding: 10px 15px;
+      background-color: $white;
+      border-radius: 0 25px 25px 0;
+      cursor: pointer;
+      img{
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+  .map__info{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  h2{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    font-weight: 100;
+  }
+  ::placeholder{
+    color: $text-grey;
+  }
+}
+// Section Information
+.information{
+  border: 5px solid $white;
+  border-top: none;
+  background-color: $white;
+  display: flex;
+  gap: 10px;
+  >a{
+    height: 150px;
+    width: calc(100% / 3);
+  }
+  &__config{
+    background: url('../img/configure.png') center/cover;
+  }
+  &__book{
+    background: url('../img/book.png') center/cover;
+  }
+  &__contact{
+    background: url('../img/contact.png') center/cover;
+  }
+  &__config, &__book, &__contact{
+    position: relative;
+    display: flex;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.25);
+      z-index: 1;
+      transition: .3s all ease-in-out;
+    }
+    >div{
+      position: relative;
+      z-index: 2;
+      color: $white;
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      padding: 0 1rem 1rem 1rem;
+      p{
+        font-size: 1.25rem;
+        margin-right: auto;
+        font-weight: 100;
+        transition: .3s all ease-in-out;
+        span{
+          font-weight: 300;
+        }
+      }
+    }
+    &:hover p{
+      font-size: 1.3rem;
+    }
+    &:hover::before{
+      background-color: rgba(0, 0, 0, 0.45);
+    }
+  }
+}
+// Footer Top Section
+.main__footer{
+  background-color: $black;
+  color: $white;
+  padding: 55px 0;
+  .wrapper{
+    display: flex;
+  }
+}
+.main__footer__links{
+  width: 85%;
+  display: grid;
+  grid-template-areas: 
+  "footer1 footer2"
+  "hr hr"
+  "footer3 footer4"
+  ;
+  padding: 0 3.4rem;
+  &--1{
+    grid-area: footer1;
+    display: flex;
+    >div:nth-of-type(1), >div:nth-of-type(2){
+      display: flex;
+      flex-direction: column;
+      place-content: space-between;
+    }
+    a{
+      font-size: 1.25rem;
+      font-weight: 300;
+      margin-right: 100px;
+    }
+  }
+  &--2{
+    grid-area: footer2;
+    display: flex;
+    border-left: 1px solid $text-grey;
+    >div:nth-of-type(1), >div:nth-of-type(2){
+      display: flex;
+      flex-direction: column;
+      place-content: space-between;
+      a:nth-of-type(2), a:nth-of-type(3){
+        margin: 20px 0 10px 0;
+      }
+      a:nth-of-type(3){
+        margin: 10px 0 20px 0;
+      }
+    }
+    >div:nth-of-type(1){
+      margin-left: 7rem;
+      margin-right: 3rem;
+    }
+    a{
+      font-size: 0.875rem;
+      font-weight: 200;
+      margin-right: 100px;
+    }
+  }
+  &--3{
+    grid-area: footer3;
+    img{
+      width: 100px;
+    }
+    >div:nth-of-type(1){
+      margin-bottom: 1rem;
+    }
+    small{
+      font-size: 0.7rem;
+      font-weight: 100;
+      a{
+        font-weight: 300;
+      }
+    }
+  }
+  &--4{
+    grid-area: footer4;
+    display: flex;
+    font-size: 0.875rem;
+    >div:nth-of-type(1), >div:nth-of-type(2), >div:nth-of-type(3){
+      display: flex;
+      flex-direction: column;
+      place-content: space-between;
+      a{
+        display: flex;
+        align-items: center;
+        img{
+          margin-right: 8px;
+        }
+      }
+    }
+    >div:nth-of-type(1){
+      margin-left: 7rem;
+    }
+    >div:nth-of-type(2){
+      margin-left: 1.5rem;
+    }
+    img{
+      width: 30px;
+    }
+    >div:nth-of-type(2){
+      padding-right: 2rem;
+    }
+    >div:nth-of-type(3){
+      border-left: 1px solid $text-grey;
+      padding-left: 2rem;
+    }
+  }
+}
+.main__footer__socials{
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  place-content: space-between;
+  border-left: 1px solid $text-grey;
+  padding-left: 3.4rem;
+  div{
+    width: fit-content;
+    img{
+      width: 20px;
+    }
+  }
+}
+.footer__hr{
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: $text-grey;
+  grid-area: hr;
+  margin: 2rem 0;
 }

@@ -49,16 +49,27 @@ const swiper = new Swiper('.swiperCarousel', {
 });
 
 const swiperBlog = new Swiper('.swiper-container', {
-  
   slidesPerView: 3,
-  loop: true,
-  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+  loop:false,
    // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
   scrollbar: {
-    el: ".swiper-scrollbar",
+    el: '.swiper-scrollbar',
+    draggable: true,
+  },
+});
+
+const swiperSlider = new Swiper('.slider-swiper',{
+  lopp: 'true',
+  autoplay: {
+    delay: 3000,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true,
   },
 });
