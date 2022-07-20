@@ -61,6 +61,16 @@ const swiperBlog = new Swiper('.swiper-container', {
     el: '.swiper-scrollbar',
     draggable: true,
   },
+  breakpoints: {
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 1,
+    },
+    // when window width is >= 900px
+    900: {
+      slidesPerView: 2,
+    }
+  }
 });
 
 const swiperSlider = new Swiper('.slider-swiper',{

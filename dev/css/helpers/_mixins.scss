@@ -1,0 +1,13 @@
+// mixin pour media-querry
+$mobile:640px;
+$tablet: 900px;
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}

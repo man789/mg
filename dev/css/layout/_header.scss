@@ -22,11 +22,23 @@
     align-items: flex-end;
     height: 100%;
     padding: 0 100px 100px 100px;
+    @include tablet{
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding-bottom: 25px;
+    }
+    @include mobile{
+    padding: 0 25px 25px 25px;
+    }
     .header__text{
       width: 50%;
       margin-right: auto;
       position: relative;
       z-index: 2;
+      @include mobile{
+        width: 100%;
+      }
       h1{
         font-size: 3.438rem;
         font-weight: 700;
@@ -36,16 +48,22 @@
           letter-spacing: 0.25rem;
           font-weight: 100;
         }
+        @include mobile{
+          width: 50%;
+        }
       }
       p{
         font-size: 1rem;
         font-weight: 200;
         margin: 30px 0;
+        @include mobile{
+          margin: 10px 0;
+        }
       }
       a{
         display: block;
         font-size: 1rem;
-        font-weight: 200;
+        font-weight: 400;
         position: relative;
         padding-left: 30px;
         &::before{
@@ -67,6 +85,11 @@
       flex-direction: column;
       align-items: flex-end;
       gap: 0.75rem;
+      @include tablet{
+        align-items: flex-start;
+        margin-top: 30px;
+        flex-direction: row;
+      }
       a{
         display: block;
       }
@@ -78,10 +101,12 @@
     }
     .header__arrow{
       position: absolute;
-      bottom: 50px;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 25px;
+      right: 50px;
       z-index: 2;
+      @include tablet{
+
+      }
     }
   }
 }

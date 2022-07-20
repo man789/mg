@@ -11,6 +11,27 @@
     border: 1px solid $black;
   }
 }
+@include tablet{
+  .header__cta--primary{
+    display: none !important;
+  }
+}
+.header__cta--primary--img{
+  display: none !important;
+}
+@include tablet{
+  .header__cta--primary--img{
+    display: block !important;
+    font-size: 1rem;
+    color: $black;
+    width: fit-content;
+    padding: 13px 20px;
+    border: 1px solid $white;
+    background-color: $white;
+    border-radius: 25px;
+  }
+}
+
 .header__cta--secondary{
   font-size: 1rem;
   color: $white;
@@ -21,5 +42,13 @@
   border-radius: 25px;
   &:hover{
     border: 1px solid $black;
+  }
+}
+@include mobile{
+  .header__cta--primary--img{
+    padding: 8px 20px;
+  }   
+  .header__cta--secondary{
+    padding: 10px 20px;
   }
 }

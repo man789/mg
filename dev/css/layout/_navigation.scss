@@ -13,6 +13,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include tablet{
+      justify-content: space-between;
+    }
   }
 }
 .main__nav{
@@ -41,6 +44,9 @@
     a{
       font-size: 1rem;
       font-weight: 100;
+    }
+    @include tablet{
+      display: none;
     }
   }
   &__utility{
