@@ -348,6 +348,9 @@
     @include mobile{
       padding-left: 0;
     }
+    @include mobile{
+      cursor: default;
+    }
     >div:first-child{
       font-size: 1.25rem;
       span:last-child{
@@ -379,6 +382,7 @@
     border-radius: 25px;
     margin-left: 3.125rem;
     margin-bottom: 3.125rem;
+    cursor: pointer;
     &:hover{
       background-color: $white;
       color: $black;
