@@ -707,7 +707,7 @@
       width: 450px;
     }
   }
-  .swiper-slide-next + .swiper-slide + .swiper-slide{
+  .swiper-slide-next + .swiper-slide{
     opacity: .25;
   }
   @include tablet{
@@ -796,7 +796,7 @@
   border: 5px solid $white;
   height: 800px;
   @include tablet{
-    height: 400px;  
+    height: 350px;  
   }
   .swiper {
     width: 100%;
@@ -919,9 +919,15 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: $white;
   display: flex;
   gap: 10px;
+  @include mobile{
+    flex-direction: column;
+  }
   >a{
     height: 150px;
     width: calc(100% / 3);
+    @include mobile{
+      width: 100%;
+    }
   }
   &__config{
     background: url('../img/configure.png') center/cover;

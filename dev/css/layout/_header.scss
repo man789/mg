@@ -102,10 +102,12 @@
     .header__arrow{
       position: absolute;
       bottom: 25px;
-      right: 50px;
+      right: 50%;
+      transform: translateX(-50%);
       z-index: 2;
       @include tablet{
-
+        right: 50px;
+        transform: none;
       }
     }
   }

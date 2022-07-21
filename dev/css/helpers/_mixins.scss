@@ -1,6 +1,12 @@
 // mixin pour media-querry
+$lowres:480px;
 $mobile:640px;
 $tablet: 900px;
+@mixin lowres {
+  @media screen and (max-width: $lowres) {
+    @content;
+  }
+}
 @mixin mobile {
   @media screen and (max-width: $mobile) {
     @content;
