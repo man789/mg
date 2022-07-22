@@ -4,7 +4,15 @@ let opt_3 = document.querySelector('.advantage__container__option--3');
 let img_1 = document.querySelector('.advantage__container__option--1--img');
 let img_2 = document.querySelector('.advantage__container__option--2--img');
 let img_3 = document.querySelector('.advantage__container__option--3--img');
+let subNav = document.querySelector('.link-sub');
+let subContainer = document.querySelector('.sub-container');
 
+// Sub Menu
+subNav.addEventListener('click', () =>{
+  subContainer.classList.toggle('db');
+});
+
+// Section Image
 opt_1.addEventListener('click', () =>{
   opt_1.classList.add('option--active');
   opt_2.classList.remove('option--active');

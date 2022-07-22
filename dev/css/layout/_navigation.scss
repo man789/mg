@@ -21,7 +21,7 @@
 .main__nav{
   background: rgb(0,0,0);
   background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
-  border: 5px solid $white;
+  border-top: 5px solid $white;
   border-bottom: none;
   z-index: 20;
   &__logo{
@@ -84,5 +84,72 @@
       width: calc(25px/2);
     }
   }
-  
+}
+// Sub Nav
+.main__nav__links{
+  .sub-container{
+    width: 290px;
+    position: absolute;
+    top: 40px;
+    left: -65px;
+    display: none;
+  }
+  .db{
+    display: block;
+  }
+  .triangle{
+    height: 10px;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .link-sub{
+    position: relative;
+    font-size: 1rem;
+    font-weight: 100;
+    cursor: pointer;
+  }
+  &--sub--nav{
+    background-color: $white;
+    color: $text;
+    border-radius: 8px;
+    padding: 30px;
+    a{
+      display: flex;
+      margin-bottom: 15px;
+      align-items: center;
+      position: relative;
+      &::before{
+        content: "";
+        opacity: 0;
+        transition: .5s all ease-in-out;
+      }
+      :hover::before{
+        content: "";
+        background: url(../img/rectangle-black.svg);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 10px;
+        height: 2px;
+        opacity: 1;
+      }
+    }
+    a:last-of-type{
+      margin-bottom: 0;
+    }
+    span{
+      margin-right: auto;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      &:hover{
+        margin-left: 15px;
+      }
+      
+    }
+    img{
+      width: 90px;
+    }
+  }
 }
