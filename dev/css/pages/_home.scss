@@ -22,6 +22,9 @@
       width: 85%;
       padding-left: 6rem;
     }
+    @include lowres{
+      width: 100%;
+    }
     h2{
       font-size: 1rem;
       font-weight: 700;
@@ -115,6 +118,9 @@
     }
     &__img{
       height: 300px;
+      @include lowres{
+        height: 250px;
+      }
     }
     &__type{
       display: flex;
@@ -193,6 +199,9 @@
         }
         @include mobile{
           width: 40% !important;
+        }
+        @include lowres{
+          width: fit-content !important;
         }
       }
     }
@@ -622,6 +631,10 @@
     top: 60%;
     left: 42%;    
   } 
+  @include lowres{
+    top: 53%;
+    left: 35%;    
+  } 
 }
 .swiper-button-right{
   position: absolute;
@@ -640,6 +653,10 @@
   @include tablet{
     top: 60%;
     right: 42%;  
+  }
+  @include lowres{
+    top: 53%;
+    left: 49%;    
   }
 }
 // Section Blog
