@@ -168,15 +168,11 @@
         border: 1px solid transparent;
         border-radius: 25px;
         margin-right: 10px;
-        &:hover{
-          border: 1px solid $black;
-        }
         @include tablet{
           order: 2;
           margin-left: 10px;
           margin-right: 0;
         }
-        
       }
       a:nth-of-type(2){
         font-size: 0.875rem;
@@ -187,7 +183,7 @@
         background-color: $black;
         border-radius: 25px;
         &:hover{
-          background-color: $white;
+          background-color: $bg-grey;
           color: $black;
         }
       }
@@ -445,6 +441,7 @@
     left: 3.125rem;
     width: 15px;
     height: 2px;
+    animation: 2s optionClick infinite;
     @include mobile{
       display: none;
     }
@@ -454,6 +451,10 @@
       margin: 0 0 0 4px;
     }
   }
+}
+@keyframes optionClick {
+  0% {width: 0px;}
+  100% {width: 15px;}
 }
 // Image Z-index active
 .img--active{
@@ -695,11 +696,27 @@
   .swiper-container {
     width: 100%;
     height: 100%;
+    padding: 0 8em 0 10em;
+    @include tablet{
+      padding: 0 4em 0 6em;
+    }
+    @include mobile{
+      padding: 0 2em 0 2em;
+    }
   }
   .swiper-slide {
     text-align: center;
+    width: 350px !important;
+    @include lowres{
+      width: 120px !important;
+    }
     >div:nth-of-type(1){
       width: 80%;
+      height: 400px;
+      img{
+        object-fit: cover;
+        height: 100%;
+      }
     }
     h3{
       font-size: 0.875rem;
@@ -708,14 +725,26 @@
       letter-spacing: 6px;
       margin-top: 2rem;
       margin-bottom: 0.8rem;
+      @include lowres{
+        font-size: 0.5rem;
+        text-align: left;
+      }
     }
     p:first-of-type{
       font-size: 1.563rem;
       font-weight: 300;
+      @include lowres{
+        font-size: 1.2rem;
+        text-align: left;
+      }
     }
     p:last-of-type{
       font-size: 1.563rem;
       font-weight: 100;
+      @include lowres{
+        font-size: 1.2rem;
+        text-align: left;
+      }
     }
   }
   .swiper-container {
@@ -724,12 +753,18 @@
       width: 450px;
     }
   }
-  .swiper-slide-next + .swiper-slide{
+  .swiper-slide-next + .swiper-slide + .swiper-slide{
     opacity: .25;
+    @include lowres{
+      opacity: 1;
+    }
   }
   @include tablet{
     .swiper-slide-next{
       opacity: .25;
+      @include lowres{
+        opacity: 1;
+      }
     }
     .swiper-slide{
       width: 450px;
@@ -750,6 +785,9 @@
   @include tablet{
     width: 75%;
   }
+  @include lowres{
+    display: none;
+  }
   .swiper-scrollbar-horizontal {
     border-radius: 2px;
     height: 5px;
@@ -766,6 +804,9 @@
   @include tablet{
     width: 15%;  
     justify-content: space-between;
+  }
+  @include lowres{
+    display: none;
   }
   .swiper-button-prev{
     position: relative;

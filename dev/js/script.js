@@ -6,6 +6,70 @@ let img_2 = document.querySelector('.advantage__container__option--2--img');
 let img_3 = document.querySelector('.advantage__container__option--3--img');
 let subNav = document.querySelector('.link-sub');
 let subContainer = document.querySelector('.sub-container');
+let linkMenu = document.querySelectorAll('.link__menu');
+let linkMenuClicked = document.querySelectorAll('.menu__content__models--link');
+let imgMenu = document.querySelector('.image-test');
+let menuContent = document.querySelector('.menu__content');
+let menuContentModels = document.querySelector('.menu__content__models');
+let secondNav = document.querySelector('.menu');
+let burgerOpen = document.querySelector('.main__nav__utility__burger');
+let burgerClose = document.querySelector('.menu__close__btn');
+let burger = document.querySelector('.burger__nav');
+let menu = document.querySelector('.main__nav__links');
+
+// Responsive Menu
+burgerOpen.addEventListener('click', () => {
+  menuContent.style.display = 'block';
+  secondNav.style.display = 'block';
+});
+
+burgerClose.addEventListener('click', () => {
+  menuContent.style.display = 'none';
+  secondNav.style.display = 'none';
+  imgMenu.innerHTML = `<img src="img/header.png" alt="Background image">`;
+  for (let i = 0; i < linkMenu.length; i++) {
+    linkMenu[i].classList.remove('link__menu--active');
+  };
+  for (let j = 0; j < linkMenuClicked.length; j++) {
+    linkMenuClicked[j].classList.remove('active-menu');
+  };
+  menuContentModels.style.display = 'none';
+});
+
+// Active link Menu
+for (let i = 0; i < linkMenu.length; i++) {
+  linkMenu[i].addEventListener('click', () =>{
+    for (let index = 0; index < linkMenu.length; index++) {
+      linkMenu[index].classList.remove('link__menu--active');
+    }
+    linkMenu[i].classList.toggle('link__menu--active');
+    if (linkMenu[i] == linkMenu[0]) {
+      menuContentModels.style.display = 'flex';
+    }else{
+      menuContentModels.style.display = 'none';
+    }
+  });
+}
+
+// Active link Menu Clicked and Image Change
+for (let i = 0; i < linkMenuClicked.length; i++) {
+  linkMenuClicked[i].addEventListener('click', () =>{
+    for (let index = 0; index < linkMenuClicked.length; index++) {
+      linkMenuClicked[index].classList.remove('active-menu');
+    }
+    linkMenuClicked[i].classList.toggle('active-menu');
+    switch(linkMenuClicked[i]) {
+      case linkMenuClicked[0]:
+        imgMenu.innerHTML = `<img src="img/bg-menu.png" alt="Background image">`;
+        break;
+      case linkMenuClicked[1]:
+        imgMenu.innerHTML = `<img src="img/header.png" alt="Background image">`;
+        break;
+      default:
+        imgMenu.innerHTML = `<img src="img/bg-menu.png" alt="Background image">`;
+    }
+  });
+}
 
 // Sub Menu
 subNav.addEventListener('click', () =>{
@@ -70,8 +134,8 @@ const swiperBlog = new Swiper('.swiper-container', {
     draggable: true,
   },
   breakpoints: {
-    // when window width is >= 480px
-    480: {
+    // when window width is >= 460px
+    460: {
       slidesPerView: 1,
     },
     // when window width is >= 900px
