@@ -41,7 +41,6 @@ burgerOpen.addEventListener('click', () => {
   menuContent.style.display = 'block';
   secondNav.style.display = 'block';
 });
-
 burgerClose.addEventListener('click', () => {
   menuContent.style.display = 'none';
   secondNav.style.display = 'none';
