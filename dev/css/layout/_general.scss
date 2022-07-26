@@ -24,3 +24,10 @@ h1,h2,h3,h4,h5,h6,p,a{
 .light-text{
   font-weight: 100;
 }
+.animOpacity{
+  animation: 3s opacityText normal;
+}
+@keyframes opacityText {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

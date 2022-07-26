@@ -1,2 +1,3 @@
 # MG
 
+## MG Template Homepage

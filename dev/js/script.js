@@ -17,6 +17,25 @@ let burgerClose = document.querySelector('.menu__close__btn');
 let burger = document.querySelector('.burger__nav');
 let menu = document.querySelector('.main__nav__links');
 
+// Opacity Animation on Scroll
+let opa = document.querySelector('.rrr');
+let opa1 = document.querySelector('.rrr__background__left');
+let opa2 = document.querySelector('.rrr__background__right');
+let introSection = document.querySelector('#intro');
+let heightIntro = introSection.offsetTop;
+document.addEventListener('scroll', () =>{
+  if (window.pageYOffset < heightIntro) {
+    introSection.classList.add('animOpacity');
+  }
+});
+let height = opa.offsetTop - 325;
+document.addEventListener('scroll', () =>{
+  if (window.pageYOffset > height) {
+    opa1.classList.add('animOpacity');
+    opa2.classList.add('animOpacity');
+  }
+});
+
 // Responsive Menu
 burgerOpen.addEventListener('click', () => {
   menuContent.style.display = 'block';
@@ -124,6 +143,7 @@ const swiperBlog = new Swiper('.swiper-container', {
   slidesPerView: 3,
   watchSlidesProgress: true,
   loop:false,
+  // centeredSlides: true,
    // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
@@ -138,9 +158,13 @@ const swiperBlog = new Swiper('.swiper-container', {
     460: {
       slidesPerView: 1,
     },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 2,
+    },
     // when window width is >= 900px
     900: {
-      slidesPerView: 2,
+      slidesPerView: 3,
     }
   }
 });
